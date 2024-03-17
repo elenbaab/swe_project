@@ -6,27 +6,20 @@ from .forms import SignupForm, LoginForm
 from .models import Form
 
 # Create your views here.
-# Home page
+
 def index(request):
     return render(request, 'index.html')
 
-# signup page
 def user_signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('input_view')
-            # input_view(request)
-            #return render(request, 'input.html')
-            # new_user_form = NewUserForm()
-            # return input_view(request)
-            # return render(request, 'newuserinfo.html', {'new_user_form': new_user_form})
     else:
         form = SignupForm()
     return render(request, 'signup.html', {'form': form})
 
-# login page
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -40,7 +33,6 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
-
 
 def user_logout(request):
     logout(request)
@@ -57,10 +49,17 @@ def user_major(request):
 
 def input_view(request):
     if request.method == 'POST':
-        major = request.POST['major']
-        grad = request.POST['grad']
-
-        new_user = Form(major=major, grad=grad)
+        firstname = request.POST['firstname']
+        lastname = request.POST['lastname']
+        startyear = request.POST['lastname']
+        gradyear = request.POST['lastname']
+        major1 = request.POST['major1']
+        major2 = request.POST['major2']
+        minor1 = request.POST['minor1']
+        minor2 = request.POST['minor2']
+        
+        new_user = Form(firstname=firstname, lastname=lastname, startyear=startyear, gradyear=gradyear, major1=major1, major2=major2, minor1=minor1, minor2=minor2)
+        
         new_user.save()
 
         return redirect('userlanding')
