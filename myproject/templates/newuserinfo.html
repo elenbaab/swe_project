@@ -1,0 +1,6 @@
+<h1>Thanks for signing up! Input your information.</h1>
+<form method="post" action="{% url 'userlanding' %}">
+    {% csrf_token %}
+    {{ new_user_form.as_p }}
+    <button type="submit">Submit</button>
+</form>
