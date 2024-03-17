@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout 
-from .forms import SignupForm, LoginForm, NewUserForm
+# from .forms import SignupForm, LoginForm, NewUserForm
+from .forms import SignupForm, LoginForm
+
+from .models import Form
 
 # Create your views here.
 # Home page
@@ -13,8 +16,12 @@ def user_signup(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             form.save()
-            new_user_form = NewUserForm()
-            return render(request, 'newuserinfo.html', {'new_user_form': new_user_form})
+            return redirect('input_view')
+            # input_view(request)
+            #return render(request, 'input.html')
+            # new_user_form = NewUserForm()
+            # return input_view(request)
+            # return render(request, 'newuserinfo.html', {'new_user_form': new_user_form})
     else:
         form = SignupForm()
     return render(request, 'signup.html', {'form': form})
@@ -34,7 +41,7 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
-# logout page
+
 def user_logout(request):
     logout(request)
     return redirect('login')
@@ -47,3 +54,15 @@ def user_plan(request):
 
 def user_major(request):
     return render(request, 'usermajor.html')
+
+def input_view(request):
+    if request.method == 'POST':
+        major = request.POST['major']
+        grad = request.POST['grad']
+
+        new_user = Form(major=major, grad=grad)
+        new_user.save()
+
+        return redirect('userlanding')
+
+    return render(request, "input.html", {})

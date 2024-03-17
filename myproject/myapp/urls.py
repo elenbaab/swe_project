@@ -15,5 +15,8 @@ urlpatterns = [
     path('usermajor/', views.user_major, name='usermajor'),
     #
 
-    path('newuserinfo/', views.user_signup, name='newuserinfo'),
+    # path('newuserinfo/', views.input_view, name='newuserinfo'),
+
+    path('input/', views.input_view, name='input_view'),
+
 ]

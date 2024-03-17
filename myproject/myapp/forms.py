@@ -11,6 +11,7 @@ class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 
+'''
 class NewUserForm(forms.Form):
     start_year = forms.IntegerField(label='Start Year')
     grad_year = forms.IntegerField(label='Graduation Year')
@@ -18,4 +19,4 @@ class NewUserForm(forms.Form):
     major2 = forms.CharField(label='Major 2', max_length=100, required=False)
     minor1 = forms.CharField(label='Minor 1', max_length=100, required=False)
     minor2 = forms.CharField(label='Minor 2', max_length=100, required=False)
-    
+'''
