@@ -3,12 +3,14 @@
 
 <h1>User Landing Page</h1>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> User Landing Page </title>
-<link rel="stylesheet" href="{% static 'userlanding.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> User Landing Page </title>
+  <link rel="stylesheet" href="{% static 'userlanding.css' %}">
 </head>
+
 <body>
 
 <div class="container">
@@ -16,8 +18,6 @@
       <div class="section">
         <div class="input-group">
           <label for="student-name">Student Name:</label>
-          <!-- First Name and Last Name from the Database Should Show Up -->
-          <p> DATA FOR STUDENT NAME </p>
           <p> {{ first_name }} {{last_name }}</p>
         </div>
         <div class="input-group">
@@ -27,25 +27,21 @@
         <hr>
         <div class="input-group">
           <label for="catalog-year">Catalog Year:</label>
-          <p> DATA FOR CATALOG YEAR </p>
+          <p> {{ start_year }} </p>
         </div>
         <div class="input-group">
           <label for="graduation-term">Graduation Year:</label>
-          <!-- Graduation Year from the Database Should Show Up -->
-          <p> DATA FOR GRADUATION YEAR </p>
           <p> {{ grad_year }} </p>
         </div>
         <hr>
         <div class="input-group">
           <label for="major">Major(s):</label>
-          <!-- Major from the Database Should Show Up -->
-          <p> DATA FOR MAJOR </p>
-          <p> {{ major_1 }} </p>
+          <p> {{ major_1 }} | {{ major_2 }} </p>
         </div>
         <hr>
         <div class="input-group">
           <label for="minor">Minor(s):</label>
-          <p> DATA FOR MINOR </p>
+          <p> {{ minor_1 }} | {{ minor_2 }} </p>
         </div>
       </div>
     </div>
@@ -60,7 +56,7 @@
             <div class="progress-bar" id="mcas-progress"></div>
             <span class="progress-text">40% Done</span>
           </div>
-          <h4> "MAJOR NAME" Major Progress (X Credits Total) </h4>
+          <h4> {{ major_1 }} Major Progress (X Credits Total) </h4>
           <div class="section progress">
             <div class="progress-bar" id="major1-progress"></div>
             <span class="progress-text">60% Done</span>

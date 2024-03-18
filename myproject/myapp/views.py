@@ -51,8 +51,8 @@ def input_view(request):
     if request.method == 'POST':
         firstname = request.POST['firstname']
         lastname = request.POST['lastname']
-        startyear = request.POST['lastname']
-        gradyear = request.POST['lastname']
+        startyear = request.POST['startyear']
+        gradyear = request.POST['gradyear']
         major1 = request.POST['major1']
         major2 = request.POST['major2']
         minor1 = request.POST['minor1']
@@ -61,7 +61,20 @@ def input_view(request):
         new_user = Form(firstname=firstname, lastname=lastname, startyear=startyear, gradyear=gradyear, major1=major1, major2=major2, minor1=minor1, minor2=minor2)
         
         new_user.save()
-
-        return redirect('userlanding')
+    
+        return render(request, "userlanding.html", {
+            'first_name': firstname,
+            'last_name': lastname,
+            'grad_year': gradyear,
+            'start_year': startyear,
+            'major_1': major1,
+            'major_2': major2,
+            'minor_1': minor1,
+            'minor_2': minor2,
+        })
 
     return render(request, "input.html", {})
+
+def sign_up_data(request):
+    data = Form.objects.all()
+    return render(request, 'userlanding.html', {'data': data})
