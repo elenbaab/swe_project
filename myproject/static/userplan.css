@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    color: maroon;
+    background-color: #FAF9F6;
+  }
+  h1 {
+    text-align: center;
+  }
+  .plan-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .semester-plan {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    width: 48%;
+  }
+  .semester-header {
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+  }
+  .course-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .course-list li {
+    padding: 5px;
+    border-bottom: 1px dotted black;
+  }
+  .course-list li:last-child {
+    border-bottom: none;
+  }
+  .tab-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-top: 30px;
+  }
+  .tab {
+    padding: 5px 15px;
+    border: 1px solid black;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .tab.active {
+    background-color: maroon;
+    color: #fff;
+  }

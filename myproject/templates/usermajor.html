@@ -1,4 +1,69 @@
 {% include 'navbar.html' %}
+{% load static %}
 
-<h1>user major page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Major and Minor Selection</title>
+  <link rel="stylesheet" href="{% static 'usermajor.css' %}">
+  
+</head>
+<body>
 
+  <h1>College Major and Minor Selection</h1>
+
+<div id="formContainer">
+  <form id="majorMinorForm">
+    <div>
+      <label for="major">Select your major:</label>
+      <select id="major" name="major">
+        <option value="computer-science">Computer Science</option>
+        <option value="engineering">Engineering</option>
+        <option value="business">Business</option>
+        <option value="test">will fill in once we have API</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+
+    <div>
+        <label for="major">Select your second major:</label>
+        <select id="major" name="major">
+          <option value="">None</option>
+          <option value="engineering">Engineering</option>
+          <option value="business">Business</option>
+          <option value="test">will fill in once we have API</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+
+    <div>
+      <label for="minor">Select your minor:</label>
+      <select id="minor" name="minor">
+        <option value="">None</option>
+        <option value="psychology">Psychology</option>
+        <option value="mathematics">Mathematics</option>
+        <option value="art-history">Art History</option>
+        <option value="test">will fill in once we have API</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+
+    <div>
+        <label for="minor">Select your second minor:</label>
+        <select id="minor" name="minor">
+          <option value="">None</option>
+          <option value="psychology">Psychology</option>
+          <option value="mathematics">Mathematics</option>
+          <option value="art-history">Art History</option>
+          <option value="test">will fill in once we have API</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+{% load static %}
 <h1>user input</h1>
 
 <!DOCTYPE html>
@@ -5,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Form</title>
+    <link rel="stylesheet" href="{% static 'input.css' %}">
 </head>
 <body>
 
@@ -21,7 +22,6 @@
         
         <button type="sumbit">Submit</button>
     </form>
-
 
 </body>
 </html>

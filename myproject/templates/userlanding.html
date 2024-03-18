@@ -1,4 +1,69 @@
 {% include 'navbar.html' %}
+{% load static %}
 
-<h1>user landing page</h1>
+<h1>User Landing Page</h1>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> User Landing Page </title>
+<link rel="stylesheet" href="{% static 'userlanding.css' %}">
+</head>
+<body>
 
+<div class="container">
+    <div class="info-section">
+      <div class="section">
+        <div class="input-group">
+          <label for="student-name">Student Name:</label>
+          <!-- First Name and Last Name from the Database Should Show Up -->
+          <p> DATA FOR STUDENT NAME </p>
+          <p> {{ first_name }} {{last_name }}</p>
+        </div>
+        <div class="input-group">
+          <label for="student-id">Student ID:</label>
+          <p> DATA FOR STUDENT ID </p>
+        </div>
+        <hr>
+        <div class="input-group">
+          <label for="catalog-year">Catalog Year:</label>
+          <p> DATA FOR CATALOG YEAR </p>
+        </div>
+        <div class="input-group">
+          <label for="graduation-term">Graduation Year:</label>
+          <!-- Graduation Year from the Database Should Show Up -->
+          <p> DATA FOR GRADUATION YEAR </p>
+          <p> {{ grad_year }} </p>
+        </div>
+        <hr>
+        <div class="input-group">
+          <label for="major">Major(s):</label>
+          <!-- Major from the Database Should Show Up -->
+          <p> DATA FOR MAJOR </p>
+          <p> {{ major_1 }} </p>
+        </div>
+        <hr>
+        <div class="input-group">
+          <label for="minor">Minor(s):</label>
+          <p> DATA FOR MINOR </p>
+        </div>
+      </div>
+    </div>
+    <div class="progress-section">
+        <h4> Graduation Progress (120 Credits Total)</h4>
+        <div class="section progress">
+            <div class="progress-bar" id="graduation-progress"></div>
+            <span class="progress-text">50% Done</span>
+          </div>
+          <h4> MCAS Progress (96 Credits Total) </h4>
+          <div class="section progress">
+            <div class="progress-bar" id="mcas-progress"></div>
+            <span class="progress-text">40% Done</span>
+          </div>
+          <h4> "MAJOR NAME" Major Progress (X Credits Total) </h4>
+          <div class="section progress">
+            <div class="progress-bar" id="major1-progress"></div>
+            <span class="progress-text">60% Done</span>
+          </div>
+    </div>
+  </div>
